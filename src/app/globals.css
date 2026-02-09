@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Smooth scrolling for anchor navigation */
+html {
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Theme tokens */
+:root {
+  /* Base */
+  --background: #f5f2ea; /* warm paper */
+  --foreground: #1f2937; /* slate-800-ish */
+
+  /* Brand */
+  --brand: #2f5d3a;
+  --brand-ink: #14351e;
+
+  /* Surfaces */
+  --surface: rgba(255, 255, 255, 0.70);
+  --surface-strong: rgba(255, 255, 255, 0.88);
+
+  /* Borders */
+  --border: rgba(0, 0, 0, 0.10);
+
+  /* Text */
+  --muted: rgba(0, 0, 0, 0.65);
+  --muted-2: rgba(0, 0, 0, 0.50);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b0f0c;
+    --foreground: #e7eee8;
+
+    --brand: #5bb07a;
+    --brand-ink: #d7ffe6;
+
+    --surface: rgba(255, 255, 255, 0.06);
+    --surface-strong: rgba(255, 255, 255, 0.10);
+    --border: rgba(255, 255, 255, 0.12);
+
+    --muted: rgba(255, 255, 255, 0.72);
+    --muted-2: rgba(255, 255, 255, 0.55);
   }
 }
 
+/* Better text rendering + base */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nice selection */
+::selection {
+  background: color-mix(in srgb, var(--brand) 25%, transparent);
+}
+
+/* Make focus rings feel consistent */
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 70%, white);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Subtle default link behavior */
+a {
+  text-underline-offset: 3px;
+}
+
+/* Optional: nicer scrollbars (supported browsers) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--brand) 35%, transparent) transparent;
 }
