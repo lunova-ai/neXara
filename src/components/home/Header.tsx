@@ -21,6 +21,7 @@ export default function Header({
         <nav className="hidden items-center gap-6 text-sm font-medium sm:flex">
           <a href="#loesungen" className="hover:text-black/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5d3a] rounded">Lösungen</a>
           <a href="#branchen" className="hover:text-black/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5d3a] rounded">Branchen</a>
+          <a href="#gemeinschaft" className="hover:text-black/80">Gemeinschaft</a>
           <a href="#ablauf" className="hover:text-black/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5d3a] rounded">Ablauf</a>
           <a href="#kontakt" className="hover:text-black/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5d3a] rounded">Kontakt</a>
         </nav>

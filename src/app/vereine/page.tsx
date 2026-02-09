@@ -2,53 +2,55 @@ import Link from "next/link";
 
 const offers = [
   {
-    title: "Feld & Förderung ohne Zettelstress",
-    who: "Ackerbau, Förderauflagen, Kontrollen",
+    title: "Mitglieder & Beiträge ohne Zettelwirtschaft",
+    who: "Mitgliederlisten, Beiträge, Rollen, Ein-/Austritte",
     bullets: [
-      "Einfache Feld-Dokumentation (Aussaat, Düngung, Pflanzenschutz, Ernte)",
-      "Alles griffbereit für Kontrollen/Steuer/Förderstellen",
-      "Klare Struktur statt Ordner/Excel-Mix",
+      "Mitglieder sauber verwalten (Kontakt, Status, Rollen)",
+      "Beitragsübersicht: bezahlt / offen / Erinnerung",
+      "Einfacher Ablauf statt Excel + WhatsApp + Zettel",
     ],
-    outcome: "Förder-Nachweise ohne Stress – und weniger Papierkrieg.",
+    outcome: "Mehr Überblick – und weniger Nachlaufen wegen Beiträgen.",
   },
   {
-    title: "Lieferfähig für Großkunden",
-    who: "Kartoffeln, Mais, Getreide – Abnehmer, Lager, Handel",
+    title: "Veranstaltungen planbar organisieren",
+    who: "Fest, Turnier, Ausflug, JHV, Sammelaktion",
     bullets: [
-      "Übersicht: verfügbare Mengen, zugesagte Mengen, Liefertermine",
-      "Chargen & Lieferdoku (einfach, nachvollziehbar)",
-      "Vorlagen für Lieferscheine/Rechnungen (optional)",
+      "Aufgabenliste & Zuständigkeiten (wer macht was bis wann?)",
+      "Helferlisten/Schichten übersichtlich",
+      "Kommunikation strukturiert: Infos gehen nicht verloren",
     ],
-    outcome: "Mehr Verlässlichkeit – weniger Excel-Chaos bei Lieferungen.",
+    outcome: "Weniger Chaos vor dem Termin – und alle wissen Bescheid.",
   },
   {
-    title: "Wald & Hackschnitzel im Griff",
-    who: "Waldwirtschaft, Hackgut, Heizen, Maschinen teilen",
+    title: "Kassa & Nachweise sauber führen",
+    who: "Kassabuch, Belege, Förderungen, Prüfungen",
     bullets: [
-      "Lieferübersicht: wer hat wann wieviel bekommen",
-      "Maschinen teilen ohne Streit (wer hatte was wann)",
-      "Monats-Abrechnung einfach & nachvollziehbar",
+      "Belege und Rechnungen sauber gesammelt & auffindbar",
+      "Kassabuch/Übersicht nachvollziehbar (einfach, nicht bürokratisch)",
+      "Ordnung für Förderungen, Sponsoren und interne Kontrolle",
     ],
-    outcome: "Ordnung bei Hackgut & Maschinennutzung – ohne Schmierzettel.",
+    outcome: "Sicherer Umgang mit Geld – und Ruhe bei Rückfragen.",
   },
 ];
 
 const modules = [
-  { title: "Ab-Hof sichtbar & bestellbar", desc: "Google Maps, Öffnungszeiten, Mini-Webseite, Bestell-Setup (ohne Shop-Stress)." },
-  { title: "Pacht & Flächen", desc: "Verträge, Laufzeiten, Erinnerungen, Zahlungsübersicht – alles an einem Ort." },
-  { title: "Pferdehaltung", desc: "Einsteller, Beiträge, Termine (Tierarzt/Schmied), klare Kommunikation statt WhatsApp-Flut." },
-  { title: "Wetter & Risiko", desc: "Schadensmappe, Nachweise für Versicherung/Förderung, „wenn’s kracht“ alles griffbereit." },
+  { title: "Mitgliederverwaltung", desc: "Rollen, Listen, Beiträge, Kontakt – sauber & verständlich." },
+  { title: "Event-Organisation", desc: "Aufgaben, Helfer, Schichten, Materiallisten – alles an einem Ort." },
+  { title: "Kommunikation", desc: "Weniger WhatsApp-Chaos: klare Kanäle & Textbausteine." },
+  { title: "Dokumentenmappe", desc: "Protokolle, Statuten, Genehmigungen, Versicherungen – schnell gefunden." },
+  { title: "Sponsoren & Förderungen", desc: "Unterlagen, Fristen, Nachweise – damit nichts liegen bleibt." },
+  { title: "Gemeinschaftsprojekte", desc: "Teilen, tauschen, helfen: Regeln & Abläufe transparent." },
 ];
 
 const packages = [
-  { name: "Büro-Check", price: "Fixpreis", desc: "90 Minuten vor Ort/online + 3 Sofort-Verbesserungen." },
-  { name: "Quick Win", price: "7 Tage", desc: "Eine konkrete Entlastung schnell umgesetzt (z.B. Doku, Abrechnung, Übersicht)." },
-  { name: "Digitaler Plan", price: "transparent", desc: "Proof of Concept + Aufwand/Kosten klar – Entscheidung leicht." },
-  { name: "Umsetzung", price: "individuell", desc: "Wenn’s passt: sauber bauen, testen, übergeben." },
-  { name: "Betreuung", price: "optional", desc: "Quartals-Check, Support, kleine Anpassungen – damit’s bleibt." },
+  { name: "Vereins-Check", price: "Fixpreis", desc: "90 Minuten + 3 Sofort-Verbesserungen (Ablauf, Kassa, Kommunikation)." },
+  { name: "Quick Win", price: "7 Tage", desc: "Eine konkrete Entlastung (Mitglieder/Beiträge oder Event-Setup) umgesetzt." },
+  { name: "Digitaler Plan", price: "transparent", desc: "Proof of Concept + klarer Aufwand – damit alle zustimmen können." },
+  { name: "Umsetzung", price: "individuell", desc: "Wir setzen es sauber um, schulen kurz, und es funktioniert." },
+  { name: "Betreuung", price: "optional", desc: "Saison- oder Jahres-Check, Support, kleine Anpassungen." },
 ];
 
-export default function LandwirtschaftPage() {
+export default function VereinePage() {
   return (
     <main className="min-h-screen bg-[#f5f2ea] text-[#1f2937]">
       {/* Top bar */}
@@ -69,15 +71,17 @@ export default function LandwirtschaftPage() {
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-5 py-10 md:py-14">
         <p className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3 py-1 text-xs font-semibold">
-          Landwirtschaft • Wald • Direktvermarktung
+          Vereine • Ehrenamt • Gemeinschaft
         </p>
 
         <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
-          Digitale Entlastung für landwirtschaftliche Betriebe.
+          Vereinsarbeit leichter machen – ohne Bürokratie.
         </h1>
+
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg">
-          Nicht „Digitalisierung um jeden Preis“, sondern pragmatische Ordnung: weniger Zettel,
-          weniger WhatsApp-Chaos, mehr Überblick – damit du dich auf Feld, Tiere und Familie konzentrieren kannst.
+          Ob Feuerwehr, Musikverein, Eisstock, Jagd, Fischerei oder Sport:
+          Wir bringen Ordnung in Mitglieder, Beiträge, Veranstaltungen und Dokumente –
+          so einfach, dass es im Ehrenamt wirklich passt.
         </p>
 
         <div className="mt-7 flex flex-wrap gap-3">
@@ -96,9 +100,9 @@ export default function LandwirtschaftPage() {
         </div>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
-          <MiniStat title="Ackerbau" desc="Doku & Förderung" />
-          <MiniStat title="Wald" desc="Hackgut & Maschinen" />
-          <MiniStat title="Ab-Hof" desc="Sichtbarkeit & Bestellen" />
+          <MiniStat title="Mitglieder" desc="Beiträge im Blick" />
+          <MiniStat title="Events" desc="Helfer & Aufgaben" />
+          <MiniStat title="Kassa" desc="Belege sauber" />
         </div>
       </section>
 
@@ -107,7 +111,7 @@ export default function LandwirtschaftPage() {
         <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="text-2xl font-extrabold tracking-tight">3 typische Einstiegsangebote</h2>
           <p className="mt-2 text-black/70">
-            Wir starten mit dem, was am meisten nervt – und machen’s spürbar einfacher.
+            Wir starten dort, wo es sofort Entlastung bringt – ohne dass der Verein „umlernen“ muss.
           </p>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -130,9 +134,23 @@ export default function LandwirtschaftPage() {
           <div className="mt-8 rounded-3xl border border-black/10 bg-[#f5f2ea] p-6">
             <p className="text-sm font-semibold">Wichtig:</p>
             <p className="mt-1 text-sm text-black/70">
-              Wir verkaufen keine „eine Software für alles“. Wir schauen, was du schon nutzt (Excel/WhatsApp/Branchen-Tools)
-              und bauen eine einfache Struktur drum herum, die wirklich hält.
+              Ehrenamt braucht einfache Lösungen. Wir bauen so, dass es auch dann funktioniert,
+              wenn nicht alle technikbegeistert sind – und dass Wissen nicht bei einer Person hängt.
             </p>
+          </div>
+
+          {/* Crosslink Förderungen */}
+          <div className="mt-6 rounded-3xl border border-black/10 bg-[#f5f2ea] p-6">
+            <p className="text-sm font-semibold">Förderungen, Sponsoren & Nachweise</p>
+            <p className="mt-1 text-sm text-black/70">
+              Unterlagen, Fristen und Belege so organisieren, dass es bei Rückfragen sofort passt.
+            </p>
+            <Link
+              className="mt-3 inline-flex text-sm font-semibold text-[#2f5d3a] hover:underline"
+              href="/foerderungen"
+            >
+              Mehr zu Förderungen →
+            </Link>
           </div>
         </div>
       </section>
@@ -160,9 +178,9 @@ export default function LandwirtschaftPage() {
       {/* Module */}
       <section className="border-t border-black/5 bg-white/40">
         <div className="mx-auto max-w-6xl px-5 py-12">
-          <h2 className="text-2xl font-extrabold tracking-tight">Module (je nach Betrieb)</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight">Module (je nach Verein)</h2>
           <p className="mt-2 text-black/70">
-            Du brauchst nicht alles. Wir wählen nur das, was bei dir wirklich wirkt.
+            Du brauchst nicht alles. Wir nehmen nur das, was bei euch wirklich wirkt.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -176,24 +194,14 @@ export default function LandwirtschaftPage() {
         </div>
       </section>
 
-      <div className="mt-8 rounded-3xl border border-black/10 bg-[#f5f2ea] p-6">
-  <p className="text-sm font-semibold">Förderungen & Nachweise</p>
-  <p className="mt-1 text-sm text-black/70">
-    Wenn Kontrollen oder Förderfristen stressen: Wir bauen dir eine einfache Kontrollmappe + Ablauf.
-  </p>
-  <Link className="mt-3 inline-flex text-sm font-semibold text-[#2f5d3a] hover:underline" href="/foerderungen">
-    Mehr zu Förderungen →
-  </Link>
-</div>
-
-
       {/* Kontakt */}
       <section id="kontakt" className="mx-auto max-w-6xl px-5 py-12">
         <div className="grid gap-6 md:grid-cols-2">
           <div>
             <h2 className="text-2xl font-extrabold tracking-tight">Kostenloses Erstgespräch</h2>
             <p className="mt-2 text-black/70">
-              Sag mir kurz, was dich im Alltag nervt. Ich sage dir ehrlich, ob und wie wir helfen können.
+              Sag kurz, was euch aufhält: Mitglieder/Beiträge, Event-Organisation, Kassa, Dokumente,
+              Förderungen. Ich sage dir ehrlich, ob und wie wir helfen können.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -217,19 +225,12 @@ export default function LandwirtschaftPage() {
           </div>
 
           <div className="rounded-3xl border border-black/10 bg-[#f5f2ea] p-6">
-            <p className="text-sm font-semibold">Für den Start ideal:</p>
-            <p className="mt-1 text-sm text-black/70">
-              Büro-Check (90 Minuten) – danach weißt du glasklar, was wir zuerst vereinfachen.
-            </p>
-
-            <div className="mt-4 rounded-2xl border border-black/10 bg-white/70 p-4 text-sm text-black/70">
-              <p className="font-semibold text-black">Bring mit:</p>
-              <ul className="mt-2 space-y-1">
-                <li>• 1–2 Beispiele (Angebot, Rechnung, Lieferschein)</li>
-                <li>• kurz zeigen: wie läuft’s aktuell (Excel/WhatsApp/Ordner)</li>
-                <li>• 3 Dinge, die dich am meisten nerven</li>
-              </ul>
-            </div>
+            <p className="text-sm font-semibold">Bring mit:</p>
+            <ul className="mt-3 space-y-1 text-sm text-black/70">
+              <li>• wie ihr aktuell organisiert (WhatsApp/Excel/Zettel)</li>
+              <li>• Beispiel: Mitgliederliste oder Event-Ablauf oder Kassabelege</li>
+              <li>• 3 Dinge, die euch am meisten nerven</li>
+            </ul>
           </div>
         </div>
 

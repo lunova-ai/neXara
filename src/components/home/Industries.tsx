@@ -8,11 +8,11 @@ export default function Industries() {
         <div>
           <h2 className="text-2xl font-extrabold tracking-tight">Für wen wir arbeiten</h2>
           <p className="mt-2 text-black/70">
-            Kleine Betriebe, die pragmatische Entlastung wollen – ohne IT-Blabla.
+            Kleine Betriebe & Gemeinschaften, die pragmatische Entlastung wollen – ohne IT-Blabla.
           </p>
         </div>
         <span className="hidden rounded-full bg-[#2f5d3a]/10 px-3 py-1 text-xs font-semibold text-[#2f5d3a] md:inline">
-          Platzhalter-Unterseiten
+          Platzhalter-Unterseiten (werden laufend erweitert)
         </span>
       </div>
 
@@ -21,8 +21,7 @@ export default function Industries() {
           <Link
             key={c.title}
             href={c.href}
-            className="group rounded-3xl border border-black/10 bg-white/70 p-5 shadow-sm transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5d3a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f2ea]"
-            aria-label={`${c.title} ansehen`}
+            className="group rounded-3xl border border-black/10 bg-white/70 p-5 shadow-sm transition hover:bg-white"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
