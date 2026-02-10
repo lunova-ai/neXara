@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-black/10 shadow-sm">
             <Image
               src="/images/hero.jpg"
-              alt="neXara – Digitale Entlastung für Betriebe am Land"
+              alt="MP-X – Digitale Entlastung für Betriebe am Land"
               fill
               className="object-cover"
               priority

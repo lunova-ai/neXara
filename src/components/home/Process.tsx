@@ -26,7 +26,7 @@ export default function Process() {
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <Testimonial />
         <div className="rounded-3xl border border-black/10 bg-white/70 p-6 shadow-sm">
-          <h3 className="text-lg font-bold">Warum neXara?</h3>
+          <h3 className="text-lg font-bold">Warum MP-X?</h3>
           <ul className="mt-3 space-y-2 text-sm text-black/70">
             <li>• Hersteller-unabhängig (keine Produktverkäufe)</li>
             <li>• Verständliche Sprache, bodenständig</li>

@@ -12,7 +12,7 @@ export default function Contact() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 className="rounded-xl bg-[#2f5d3a] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5d3a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f2ea]"
-                href="mailto:hello@nexara.at"
+                href="mailto:hello@MP-X.at"
               >
                 E-Mail schreiben
               </a>

@@ -1,11 +1,26 @@
 @import "tailwindcss";
 
-/* Smooth scrolling for anchor navigation */
+/* ----------------------------------------------------
+   Local fonts
+---------------------------------------------------- */
+@font-face {
+  font-family: "ZenDots";
+  src: url("/fonts/ZenDots-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------------------------------
+   Global base
+---------------------------------------------------- */
 html {
   scroll-behavior: smooth;
 }
 
-/* Theme tokens */
+/* ----------------------------------------------------
+   Theme tokens
+---------------------------------------------------- */
 :root {
   /* Base */
   --background: #f5f2ea; /* warm paper */
@@ -15,6 +30,10 @@ html {
   --brand: #2f5d3a;
   --brand-ink: #14351e;
 
+  /* Accent (Rot) */
+  --accent: #e11d48;      /* rose-600 */
+  --accent-ink: #9f1239;  /* rose-800 */
+
   /* Surfaces */
   --surface: rgba(255, 255, 255, 0.70);
   --surface-strong: rgba(255, 255, 255, 0.88);
@@ -23,7 +42,7 @@ html {
   --border: rgba(0, 0, 0, 0.10);
 
   /* Text */
-  --muted: rgba(0, 0, 0, 0.65);
+  --muted: rgba(0,  0,  0,  0.65);
   --muted-2: rgba(0, 0, 0, 0.50);
 }
 
@@ -35,6 +54,9 @@ html {
     --brand: #5bb07a;
     --brand-ink: #d7ffe6;
 
+    --accent: #fb7185;     /* rose-400 */
+    --accent-ink: #fecdd3; /* rose-200 */
+
     --surface: rgba(255, 255, 255, 0.06);
     --surface-strong: rgba(255, 255, 255, 0.10);
     --border: rgba(255, 255, 255, 0.12);
@@ -44,13 +66,18 @@ html {
   }
 }
 
-/* Better text rendering + base */
+/* ----------------------------------------------------
+   Better text rendering + base
+---------------------------------------------------- */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, sans-serif;
+
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Nice selection */
@@ -58,7 +85,7 @@ body {
   background: color-mix(in srgb, var(--brand) 25%, transparent);
 }
 
-/* Make focus rings feel consistent */
+/* Make focus rings consistent */
 :focus-visible {
   outline: 2px solid color-mix(in srgb, var(--brand) 70%, white);
   outline-offset: 2px;
@@ -75,3 +102,34 @@ a {
   scrollbar-width: thin;
   scrollbar-color: color-mix(in srgb, var(--brand) 35%, transparent) transparent;
 }
+
+/* ----------------------------------------------------
+   Wordmark: MP-X (Text-only, local font)
+---------------------------------------------------- */
+.wordmark {
+  font-family: "ZenDots", var(--font-geist-sans), system-ui, -apple-system,
+    "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 400; /* Metal Mania nur Regular */
+  letter-spacing: 0.02em; /* Display fonts brauchen oft etwas Luft */
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.wordmark-dot {
+  color: var(--accent);
+  display: inline-block;
+  transform: translateY(0.02em);
+}
+
+.wordmark-x {
+  color: var(--accent);
+}
+
+/* Optional: minimaler Hover (nur Farbe, kein Effekt) */
+@media (hover: hover) and (pointer: fine) {
+  .wordmark:hover .wordmark-x,
+  .wordmark:hover .wordmark-dot {
+    color: color-mix(in srgb, var(--accent) 85%, black);
+  }
+}
+

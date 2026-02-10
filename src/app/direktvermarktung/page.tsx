@@ -193,7 +193,7 @@ export default function DirektvermarktungPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 className="rounded-xl bg-[#2f5d3a] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-95"
-                href="mailto:hello@nexara.at"
+                href="mailto:hello@MP-X.at"
               >
                 E-Mail schreiben
               </a>
